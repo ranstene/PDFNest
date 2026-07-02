@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Extract embedded images from PDF files locally in your browser. PDFNest exports extractable raster images as PNG files or one ZIP download with no upload server.">
+  <meta name="theme-color" content="#0f766e">
+  <title>Extract Images from PDF Online | PDFNest</title>
+  <link rel="canonical" href="/extract-images-from-pdf/">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <meta property="og:title" content="Extract Images from PDF Online | PDFNest">
+  <meta property="og:description" content="Pull embedded raster images from PDF files in your browser and download them as PNG images or a ZIP file.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/extract-images-from-pdf/">
+  <meta property="og:site_name" content="PDFNest">
+  <meta property="og:image" content="/icons/icon.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Extract Images from PDF Online | PDFNest">
+  <meta name="twitter:description" content="Extract embedded PDF images locally in your browser with no upload server.">
+  <link rel="icon" href="../icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "PDFNest Extract Images from PDF Tool",
+        "url": "/extract-images-from-pdf/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any modern browser",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": ["Extract embedded images from PDF", "Export images as PNG", "Scan selected PDF pages", "Download multiple images as ZIP", "Process files locally in the browser"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does the Extract Images from PDF tool upload my PDF?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. PDFNest scans the selected PDF locally in your browser and does not upload documents to a server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will it extract every visual element from a PDF?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It extracts raster images exposed by the browser PDF renderer. Vector artwork, text, backgrounds, and some compressed or masked images may not be available as separate image files."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-content">
+      <div>
+        <p class="eyebrow">Convert from PDF</p>
+        <h1>Extract Images from PDF</h1>
+        <p class="intro">Pull embedded raster images from a PDF and download them as PNG files.</p>
+      </div>
+      <div class="header-actions">
+        <a class="tools-nav-button" href="../index.html#pdf-extract-card">Open Extract Images Tool</a>
+        <a class="tools-nav-button" href="../index.html">All Tools</a>
+        <div class="privacy-note">
+          <span class="status-dot"></span>
+          No upload server
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <article class="legal-card">
+      <section>
+        <h2>How It Works</h2>
+        <p>Open the extractor, select a PDF, choose the pages to scan, then download the images found in the file. One image downloads as a PNG, while multiple images are packaged into one ZIP file.</p>
+        <ol>
+          <li>Select one PDF file.</li>
+          <li>Choose all pages, first page, or a page range.</li>
+          <li>Set a minimum image width to skip tiny icons or artifacts.</li>
+          <li>Extract and download the PNG image or ZIP file.</li>
+        </ol>
+      </section>
+      <section>
+        <h2>Common Use Cases</h2>
+        <p>Recover photos from reports, save product images from catalogs, pull logos from proof files, collect chart images, or archive embedded pictures from older PDF documents.</p>
+      </section>
+      <section>
+        <h2>Privacy</h2>
+        <p>The PDF is opened and scanned by JavaScript in your browser. PDFNest does not upload, store, or transmit the selected file. Generated download links are temporary and stay inside the current browser session.</p>
+      </section>
+      <section>
+        <h2>Limitations</h2>
+        <p>This tool extracts raster images that the browser PDF renderer exposes. It does not convert text, vector artwork, or full PDF pages into images. For full-page image output, use the PDF to JPG or PNG tool instead.</p>
+      </section>
+      <section class="publisher-content">
+        <h2>Tips for Best Results</h2>
+        <ul>
+          <li>Increase minimum image width to skip tiny icons or decorative assets.</li>
+          <li>Scan a page range when you only need images from part of a long PDF.</li>
+          <li>Use extracted images only when you have the right to reuse them.</li>
+        </ul>
+      </section>
+      <section class="publisher-content">
+        <h2>Before You Download</h2>
+        <p>Review the extracted image list because PDFs can contain logos, thumbnails, and repeated assets.</p>
+      </section>
+      <section class="publisher-content">
+        <h2>Privacy and Ads</h2>
+        <p>The tool runs in your browser and keeps document processing separate from advertising areas. PDFNest does not send selected document contents to an ad server, and ad containers should stay away from upload, action, and download controls.</p>
+      </section>
+      <section>
+        <h2>FAQ</h2>
+        <details>
+          <summary>Does the tool upload my PDF?</summary>
+          <p>No. Image extraction runs locally in your browser with no upload server.</p>
+        </details>
+        <details>
+          <summary>Why did it find no images?</summary>
+          <p>The PDF may contain text, vector artwork, or rendered page content instead of separate embedded raster images. Some images can also be stored in ways the browser renderer does not expose for extraction.</p>
+        </details>
+        <details>
+          <summary>What format are extracted images saved in?</summary>
+          <p>Extracted images are exported as PNG files. Multiple results are grouped into one ZIP download.</p>
+        </details>
+      </section>
+      <p class="page-actions"><a class="tools-nav-button" href="../index.html#pdf-extract-card">Start extracting images</a></p>
+    </article>
+  </main>
+
+  <footer class="app-footer">
+    <p class="footer-links">
+      <a href="../about.html">About</a> |
+      <a href="../contact.html">Contact</a> |
+      <a href="../privacy.html">Privacy Policy</a>
+    </p>
+  </footer>
+</body>
+</html>

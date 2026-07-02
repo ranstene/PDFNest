@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PDFNest is a privacy-first PDF and document toolbox for merging, splitting, signing, annotating, cropping, flattening, adding text, removing known PDF passwords, compressing, converting files, exporting pages, and extracting PDF images or text in the browser.">
+  <meta name="theme-color" content="#10a66f">
+  <title>PDFNest | Private PDF and Document Tools</title>
+  <link rel="canonical" href="/">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <meta property="og:title" content="PDFNest | Private PDF and Document Tools">
+  <meta property="og:description" content="Merge, split, sign, annotate, crop, flatten, add text, remove known PDF passwords, compress, convert, export pages, and extract PDF images or text locally in your browser without uploading files.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/">
+  <meta property="og:site_name" content="PDFNest">
+  <meta property="og:image" content="/icons/icon.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PDFNest | Private PDF and Document Tools">
+  <meta name="twitter:description" content="Free browser-only PDF and document tools with no upload server.">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "/#organization",
+        "name": "PDFNest",
+        "url": "/",
+        "logo": "/icons/icon.svg"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "/#website",
+        "name": "PDFNest",
+        "url": "/",
+        "description": "Private PDF and document tools that run locally in the browser.",
+        "publisher": {
+          "@id": "/#organization"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "/#app",
+        "name": "PDFNest",
+        "url": "/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any modern browser",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Merge PDF files",
+          "Split PDF pages",
+          "Compress PDF files",
+          "Sign PDF files",
+          "Watermark PDF files",
+          "Add page numbers",
+          "Edit PDF metadata",
+          "Annotate PDF files",
+          "Flatten PDF files",
+          "Crop PDF margins",
+          "Add text to PDF files",
+          "Remove PDF passwords with the known password",
+          "Convert images to PDF",
+          "Convert DOCX, spreadsheet, and TXT files to PDF",
+          "Export PDF pages as JPG or PNG",
+          "Extract embedded images from PDF files",
+          "Extract PDF text to TXT"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I use PDFNest without uploading files?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Current PDFNest tools process selected files locally in the browser and do not upload documents to a server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does PDFNest work offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. After the app assets are cached on your device, PDFNest can run offline in supported browsers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can PDFNest open password-protected PDFs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PDFNest can ask for a password for previews, exports, image extraction, text extraction, and password removal for PDFs you can unlock."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can PDFNest remove PDF passwords?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, for PDFs you already have the password for. PDFNest asks for the password locally and creates a new unencrypted visible-page copy. The output may be image-based instead of selectable text."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can PDFNest extract images from PDFs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PDFNest can scan selected PDF pages locally in the browser and export extractable raster images as PNG files."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can PDFNest extract text from PDFs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PDFNest can extract selectable PDF text to a TXT file locally in the browser. Scanned image-only PDFs need OCR."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does flattening a PDF do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flattening creates a new visible-page PDF copy that makes signatures, annotations, and form appearances harder to edit, but the flattened copy may no longer have selectable text."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can PDFNest crop PDFs or add text?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PDFNest can crop PDF margins and place typed text onto PDF pages locally in the browser without uploading files."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is PDFNest free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PDFNest provides free browser-based PDF and document tools."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-content">
+      <div class="brand-hero">
+        <a class="brand-lockup" href="index.html" aria-label="PDFNest home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="icons/icon.svg" alt="">
+          </span>
+          <span class="brand-copy">
+            <span class="eyebrow">Private document tools</span>
+            <h1>PDFNest</h1>
+          </span>
+        </a>
+      </div>
+      <div class="header-actions">
+        <nav class="tools-nav header-tools" aria-label="All tools">
+          <div class="tools-nav-header">
+            <button class="tools-nav-toggle" id="toolNavToggle" type="button" aria-expanded="false" aria-controls="toolsNavPanel">
+              <span>All Tools</span>
+              <span class="tools-nav-toggle-icon" aria-hidden="true">v</span>
+            </button>
+          </div>
+          <div class="tools-nav-panel" id="toolsNavPanel" hidden>
+            <button class="tools-panel-backdrop" id="toolNavBackdrop" type="button" aria-label="Close tools menu" tabindex="-1"></button>
+            <div class="tools-panel-top">
+              <div>
+                <span class="tools-panel-kicker">Tool menu</span>
+                <strong>Choose a PDF tool</strong>
+              </div>
+              <button class="tools-panel-close" id="toolNavClose" type="button" aria-label="Close tools menu">x</button>
+            </div>
+            <div class="tools-panel-sticky">
+              <label class="tool-search" for="toolSearch">
+                <span class="sr-only">Search tools</span>
+                <input id="toolSearch" type="search" placeholder="Search tools" autocomplete="off">
+              </label>
+              <div class="tool-category-filters" id="toolCategoryFilters" aria-label="Tool categories">
+                <button class="tool-category-button is-active" type="button" data-tool-category="all" aria-pressed="true">All</button>
+                <button class="tool-category-button" type="button" data-tool-category="edit" aria-pressed="false">Edit PDF</button>
+                <button class="tool-category-button" type="button" data-tool-category="to-pdf" aria-pressed="false">Convert to PDF</button>
+                <button class="tool-category-button" type="button" data-tool-category="from-pdf" aria-pressed="false">Convert from PDF</button>
+              </div>
+            </div>
+            <div class="tools-menu-recent" id="toolsMenuRecent" hidden>
+              <span class="tools-menu-recent-label" id="toolsMenuRecentLabel">Recent</span>
+              <div class="tools-menu-recent-list" id="toolsMenuRecentList"></div>
+            </div>
+            <div class="tools-nav-scroll">
+              <div class="tools-nav-group" data-tool-category="edit">
+                <span class="tools-nav-label">Edit PDF</span>
+                <a class="tools-nav-button" href="#merge-card">Merge</a>
+                <a class="tools-nav-button" href="#split-card">Split</a>
+                <a class="tools-nav-button" href="#compress-card">Compress</a>
+                <a class="tools-nav-button" href="#watermark-card">Watermark</a>
+                <a class="tools-nav-button" href="#page-numbers-card">Page Numbers</a>
+                <a class="tools-nav-button" href="#signature-card">Sign</a>
+                <a class="tools-nav-button" href="#metadata-card">Metadata</a>
+                <a class="tools-nav-button" href="#annotate-card">Annotate</a>
+                <a class="tools-nav-button" href="#flatten-card">Flatten</a>
+                <a class="tools-nav-button" href="#crop-card">Crop</a>
+                <a class="tools-nav-button" href="#add-text-card">Add Text</a>
+                <a class="tools-nav-button" href="#remove-password-card">Remove Password</a>
+              </div>
+              <div class="tools-nav-group" data-tool-category="to-pdf">
+                <span class="tools-nav-label">Convert to PDF</span>
+                <a class="tools-nav-button" href="#image-card">Images</a>
+                <a class="tools-nav-button" href="#spreadsheet-card">Spreadsheet</a>
+                <a class="tools-nav-button" href="#word-card">Word</a>
+                <a class="tools-nav-button" href="#text-card">Text</a>
+              </div>
+              <div class="tools-nav-group" data-tool-category="from-pdf">
+                <span class="tools-nav-label">Convert from PDF</span>
+                <a class="tools-nav-button" href="#pdf-image-card">PDF to Images</a>
+                <a class="tools-nav-button" href="#pdf-extract-card">Extract Images</a>
+                <a class="tools-nav-button" href="#pdf-text-card">PDF to Text</a>
+              </div>
+            </div>
+            <div class="tool-search-empty" id="toolSearchEmpty" aria-live="polite" hidden>No matching tools.</div>
+          </div>
+        </nav>
+        <details class="download-history-panel header-history" id="downloadHistoryPanel">
+          <summary class="download-history-heading" id="downloadHistoryTitle">
+            <span class="download-history-title">History</span>
+            <span class="download-history-count" id="downloadHistoryCount">0 files</span>
+          </summary>
+          <div class="download-history-body">
+            <div class="download-history-actions">
+              <p class="download-history-note">Latest downloads from this session.</p>
+              <button class="download-history-clear" id="downloadHistoryClear" type="button" disabled>Clear</button>
+            </div>
+            <ul class="download-history-list empty" id="downloadHistoryList" aria-live="polite">
+              <li>No downloads yet.</li>
+            </ul>
+          </div>
+        </details>
+        <details class="app-settings-panel header-settings" id="settingsPanel">
+          <summary class="settings-toggle" id="settingsTitle" aria-label="Settings" title="Settings">
+            <span class="settings-icon" aria-hidden="true">&#9881;</span>
+            <span class="sr-only" id="settingsTitleText">Settings</span>
+          </summary>
+          <div class="settings-menu">
+            <label class="settings-field" for="languageSelect">
+              <span id="settingsLanguageLabel">Language</span>
+              <select class="language-select" id="languageSelect" aria-label="Website language">
+                <option value="en">English</option>
+                <option value="tl">Tagalog</option>
+                <option value="es">Espanol</option>
+                <option value="id">Indonesia</option>
+                <option value="hi">Hindi</option>
+                <option value="ja">日本語</option>
+                <option value="zh">中文</option>
+                <option value="ko">한국어</option>
+              </select>
+            </label>
+            <div class="settings-field">
+              <span id="settingsAppearanceLabel">Appearance</span>
+              <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+                <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+                <span class="theme-toggle-text sr-only">Dark</span>
+              </button>
+            </div>
+          </div>
+        </details>
+        <button class="install-button" id="installButton" type="button" hidden>Install app</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="home-hero" aria-labelledby="homeHeroTitle">
+    <div class="home-hero-copy">
+      <p class="eyebrow">Browser-only PDF tools</p>
+      <h2 id="homeHeroTitle">PDF tools. <span class="home-word-blue">Fast.</span> <span class="home-word-green">Simple.</span> Private.</h2>
+      <p>Merge, split, compress, convert, sign, and extract files locally in your browser.</p>
+    </div>
+
+    <label class="home-upload-zone" id="homeUploadZone" for="homeUploadFiles">
+      <span class="home-upload-icon" aria-hidden="true">PDF</span>
+      <span class="home-upload-title">Drop PDF or image files here</span>
+      <span class="home-upload-copy">Choose files to start with Merge PDF or Image to PDF.</span>
+      <span class="home-upload-button">Choose Files</span>
+      <span class="home-upload-privacy">Files stay in your browser. No upload server.</span>
+      <input id="homeUploadFiles" type="file" accept="application/pdf,.pdf,image/png,image/jpeg,.jpg,.jpeg" multiple>
+    </label>
+    <p class="home-upload-status" id="homeUploadStatus" aria-live="polite"></p>
+
+    <div class="trust-row home-trust-row" aria-label="PDFNest trust highlights">
+      <span class="trust-pill"><span class="trust-dot"></span>No upload server</span>
+      <span class="trust-pill"><span class="trust-dot trust-dot-blue"></span>Works offline</span>
+      <span class="trust-pill"><span class="trust-dot trust-dot-green"></span>Free tools</span>
+    </div>
+  </section>
+
+  <section class="home-quick-tools" aria-labelledby="quickToolsTitle">
+    <div class="home-section-heading">
+      <div>
+        <p class="eyebrow">Start fast</p>
+        <h2 id="quickToolsTitle">Quick Tools</h2>
+      </div>
+      <button class="home-link-button" id="quickAllTools" type="button">View All Tools</button>
+    </div>
+    <div class="quick-tool-grid">
+      <button class="quick-tool-card quick-tool-red" type="button" data-tool-id="merge-card">
+        <span class="quick-tool-icon" aria-hidden="true">M</span>
+        <span>
+          <strong>Merge PDF</strong>
+          <small>Combine multiple PDFs into one file</small>
+        </span>
+      </button>
+      <button class="quick-tool-card quick-tool-orange" type="button" data-tool-id="split-card">
+        <span class="quick-tool-icon" aria-hidden="true">S</span>
+        <span>
+          <strong>Split PDF</strong>
+          <small>Extract pages or split every page</small>
+        </span>
+      </button>
+      <button class="quick-tool-card quick-tool-green" type="button" data-tool-id="compress-card">
+        <span class="quick-tool-icon" aria-hidden="true">C</span>
+        <span>
+          <strong>Compress PDF</strong>
+          <small>Try to reduce PDF file size</small>
+        </span>
+      </button>
+      <button class="quick-tool-card quick-tool-blue" type="button" data-tool-id="word-card">
+        <span class="quick-tool-icon" aria-hidden="true">W</span>
+        <span>
+          <strong>Word to PDF</strong>
+          <small>Convert DOCX text to PDF</small>
+        </span>
+      </button>
+      <button class="quick-tool-card quick-tool-purple" type="button" data-tool-id="pdf-image-card">
+        <span class="quick-tool-icon" aria-hidden="true">J</span>
+        <span>
+          <strong>PDF to JPG</strong>
+          <small>Export PDF pages as images</small>
+        </span>
+      </button>
+      <button class="quick-tool-card quick-tool-teal" type="button" data-tool-id="signature-card">
+        <span class="quick-tool-icon" aria-hidden="true">S</span>
+        <span>
+          <strong>Sign PDF</strong>
+          <small>Draw or type a signature locally</small>
+        </span>
+      </button>
+      <button class="quick-tool-card quick-tool-yellow" type="button" data-tool-id="remove-password-card">
+        <span class="quick-tool-icon" aria-hidden="true">U</span>
+        <span>
+          <strong>Unlock PDF</strong>
+          <small>Remove protection with the known password</small>
+        </span>
+      </button>
+      <button class="quick-tool-card quick-tool-pink" type="button" data-tool-id="add-text-card">
+        <span class="quick-tool-icon" aria-hidden="true">T</span>
+        <span>
+          <strong>Add Text</strong>
+          <small>Place typed text on PDF pages</small>
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <section class="home-proof-row" aria-label="PDFNest privacy and reliability">
+    <article>
+      <span class="home-proof-icon" aria-hidden="true">P</span>
+      <div>
+        <h2>Private by design</h2>
+        <p>Selected files stay on your device.</p>
+      </div>
+    </article>
+    <article>
+      <span class="home-proof-icon" aria-hidden="true">O</span>
+      <div>
+        <h2>Offline ready</h2>
+        <p>Cached tools can run without internet.</p>
+      </div>
+    </article>
+    <article>
+      <span class="home-proof-icon" aria-hidden="true">F</span>
+      <div>
+        <h2>No sign up</h2>
+        <p>Use the tools without accounts.</p>
+      </div>
+    </article>
+    <article>
+      <span class="home-proof-icon" aria-hidden="true">B</span>
+      <div>
+        <h2>Browser based</h2>
+        <p>Works on modern desktop and mobile browsers.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="recent-tools-bar" id="recentToolsBar" aria-label="Recent tools" hidden>
+    <span class="recent-tools-label" id="recentToolsLabel">Recent</span>
+    <div class="recent-tools-list" id="recentToolsList"></div>
+  </section>
+
+  <main class="app-shell">
+    <aside class="instructions" aria-label="Instructions">
+      <h2>Instructions</h2>
+      <ol>
+        <li>Open All Tools and choose the tool you need.</li>
+        <li>Upload the files for the task you want to run.</li>
+        <li>Check the selected order before merging or converting.</li>
+        <li>Click the matching action button.</li>
+        <li>Use the generated download link for the finished file.</li>
+      </ol>
+      <p class="active-tool-note" id="activeToolNote" aria-live="polite">Showing Merge PDFs. Use All Tools to switch.</p>
+      <div class="ad-slot ad-slot-side" aria-label="Advertisement placeholder">
+        <span>Advertisement - 300 x 250 reserved space</span>
+      </div>
+    </aside>
+
+    <section class="tool-grid" aria-label="PDF tools">
+      <div class="tool-section-label tool-section-edit" data-tool-category="edit">Edit PDF</div>
+      <div class="tool-card" id="merge-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">01</p>
+            <h2>Merge PDFs</h2>
+          </div>
+          <div class="tool-tags" aria-label="Merge PDF highlights">
+            <span class="tool-tag tool-tag-popular">Popular</span>
+            <span class="chip">Keep page order</span>
+          </div>
+        </div>
+
+        <label class="drop-zone" for="mergeFiles">
+          <span class="drop-title">Select PDF files</span>
+          <span class="drop-copy">Tap to browse or drop multiple PDFs here in the order you want them combined.</span>
+          <input id="mergeFiles" type="file" accept="application/pdf,.pdf" multiple>
+        </label>
+
+        <div class="file-list-wrap">
+          <div class="list-label">Merge order</div>
+          <ul class="file-list empty" id="mergeList">
+            <li>No PDF files selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="mergeSummary" aria-live="polite" aria-atomic="true">No pages ready to merge.</div>
+        <div class="mini-steps" aria-label="How to use Merge PDFs">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select PDF files</li>
+            <li>Reorder, rotate, or remove pages</li>
+            <li>Merge and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="mergeClear" type="button">Clear files</button>
+
+        <div class="preview-section" id="mergePreviewSection" hidden>
+          <div class="list-label">Merge page editor</div>
+          <div class="preview-toolbar">
+            <button class="preview-tool-button" id="mergeRotateLeft" type="button">Rotate all left</button>
+            <button class="preview-tool-button" id="mergeRotateRight" type="button">Rotate all right</button>
+            <button class="preview-tool-button" id="mergeResetPages" type="button">Reset pages</button>
+          </div>
+          <div class="preview-grid" id="mergePreview"></div>
+        </div>
+
+        <button class="primary-button" id="mergeButton" type="button">Merge PDFs</button>
+        <div class="result-area" id="mergeResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="split-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">02</p>
+            <h2>Split PDF</h2>
+          </div>
+          <div class="tool-tags" aria-label="Split PDF highlights">
+            <span class="tool-tag tool-tag-offline">Offline</span>
+            <span class="chip chip-warm">Four split presets</span>
+          </div>
+        </div>
+
+        <label class="drop-zone" for="splitFile">
+          <span class="drop-title">Select one PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here, then extract the first page or pages like 1, 3-5, 8.</span>
+          <input id="splitFile" type="file" accept="application/pdf,.pdf">
+        </label>
+
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="splitList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="splitSummary" aria-live="polite" aria-atomic="true">No pages ready to split.</div>
+
+        <div class="preview-section" id="splitPreviewSection" hidden>
+          <div class="list-label">Split page editor</div>
+          <div class="preview-toolbar">
+            <button class="preview-tool-button" id="splitRotateLeft" type="button">Rotate all left</button>
+            <button class="preview-tool-button" id="splitRotateRight" type="button">Rotate all right</button>
+            <button class="preview-tool-button" id="splitResetPages" type="button">Reset pages</button>
+          </div>
+          <div class="preview-grid compact-preview" id="splitPreview"></div>
+        </div>
+
+        <div class="split-controls">
+          <label class="radio-row">
+            <input type="radio" name="splitMode" value="first" checked>
+            <span>Extract first page</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="splitMode" value="last">
+            <span>Extract last page</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="splitMode" value="range">
+            <span>Extract page range</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="splitMode" value="every">
+            <span>Split every page into separate PDFs</span>
+          </label>
+          <label class="page-input-label" for="pageSelection">Page range</label>
+          <input id="pageSelection" class="page-input" type="text" placeholder="3-5 or 1, 3-5, 8" disabled>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Split PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Choose first, last, range, or every page</li>
+            <li>Split and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="splitClear" type="button">Clear files</button>
+        <button class="primary-button accent-button" id="splitButton" type="button">Split PDF</button>
+        <div class="result-area" id="splitResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="compress-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">03</p>
+            <h2>Compress PDF</h2>
+          </div>
+          <span class="chip chip-blue">Browser optimize</span>
+        </div>
+
+        <label class="drop-zone" for="compressFile">
+          <span class="drop-title">Select one PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here to create a smaller optimized copy when possible.</span>
+          <input id="compressFile" type="file" accept="application/pdf,.pdf">
+        </label>
+
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="compressList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="compressSummary" aria-live="polite" aria-atomic="true">No PDF selected for compression.</div>
+
+        <div class="mini-steps" aria-label="How to use Compress PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Review file size warning if shown</li>
+            <li>Compress and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="compressClear" type="button">Clear file</button>
+        <button class="primary-button blue-button" id="compressButton" type="button">Compress PDF</button>
+        <div class="result-area" id="compressResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="watermark-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">04</p>
+            <h2>Watermark PDF</h2>
+          </div>
+          <span class="chip chip-warm">Text stamp</span>
+        </div>
+        <label class="drop-zone" for="watermarkFile">
+          <span class="drop-title">Select one PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here, then add a diagonal or centered text watermark.</span>
+          <input id="watermarkFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="watermarkList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="watermarkSummary" aria-live="polite" aria-atomic="true">No PDF selected for watermarking.</div>
+
+        <div class="settings-panel" aria-label="Watermark PDF settings">
+          <div class="settings-row">
+            <label for="watermarkText">Watermark text</label>
+            <input id="watermarkText" type="text" value="CONFIDENTIAL" maxlength="80">
+          </div>
+          <div class="settings-row">
+            <label for="watermarkPosition">Position</label>
+            <select id="watermarkPosition">
+              <option value="diagonal">Diagonal center</option>
+              <option value="center">Center</option>
+              <option value="top">Top</option>
+              <option value="bottom">Bottom</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="watermarkFontSize">Font size</label>
+            <input id="watermarkFontSize" type="number" min="12" max="96" step="2" value="42">
+          </div>
+          <div class="settings-row">
+            <label for="watermarkOpacity">Opacity</label>
+            <input id="watermarkOpacity" type="number" min="5" max="80" step="5" value="22">
+          </div>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Watermark PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Enter text and choose style</li>
+            <li>Add watermark and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="watermarkClear" type="button">Clear file</button>
+        <button class="primary-button accent-button" id="watermarkButton" type="button">Add Watermark</button>
+        <div class="result-area" id="watermarkResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="page-numbers-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">05</p>
+            <h2>Page Numbers PDF</h2>
+          </div>
+          <span class="chip">Footer labels</span>
+        </div>
+        <label class="drop-zone" for="pageNumberFile">
+          <span class="drop-title">Select one PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here, then add page numbers to every page.</span>
+          <input id="pageNumberFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="pageNumberList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="pageNumberSummary" aria-live="polite" aria-atomic="true">No PDF selected for page numbers.</div>
+
+        <div class="settings-panel" aria-label="Page number PDF settings">
+          <div class="settings-row">
+            <label for="pageNumberPosition">Position</label>
+            <select id="pageNumberPosition">
+              <option value="bottom-center">Bottom center</option>
+              <option value="bottom-right">Bottom right</option>
+              <option value="bottom-left">Bottom left</option>
+              <option value="top-center">Top center</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="pageNumberFormat">Format</label>
+            <select id="pageNumberFormat">
+              <option value="page">Page 1</option>
+              <option value="plain">1</option>
+              <option value="total">1 / 10</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="pageNumberStart">Start number</label>
+            <input id="pageNumberStart" type="number" min="0" max="9999" step="1" value="1">
+          </div>
+          <div class="settings-row">
+            <label for="pageNumberFontSize">Font size</label>
+            <input id="pageNumberFontSize" type="number" min="8" max="36" step="1" value="11">
+          </div>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Page Numbers PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Choose position, format, and start number</li>
+            <li>Add page numbers and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="pageNumberClear" type="button">Clear file</button>
+        <button class="primary-button" id="pageNumberButton" type="button">Add Page Numbers</button>
+        <div class="result-area" id="pageNumberResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="signature-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">06</p>
+            <h2>Sign PDF</h2>
+          </div>
+          <div class="tool-tags" aria-label="Sign PDF highlights">
+            <span class="tool-tag tool-tag-popular">Popular</span>
+            <span class="chip chip-green">Draw or type</span>
+          </div>
+        </div>
+        <label class="drop-zone" for="signatureFile">
+          <span class="drop-title">Select one PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here, then add a drawn or typed signature.</span>
+          <input id="signatureFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="signatureList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="signatureSummary" aria-live="polite" aria-atomic="true">No PDF selected for signing.</div>
+
+        <div class="settings-panel" aria-label="Sign PDF settings">
+          <div class="settings-row">
+            <label for="signatureMode">Signature type</label>
+            <select id="signatureMode">
+              <option value="draw">Draw signature</option>
+              <option value="type">Type signature</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="signaturePage">Page</label>
+            <input id="signaturePage" type="number" min="1" step="1" value="1">
+          </div>
+          <div class="settings-row">
+            <label for="signaturePosition">Position</label>
+            <select id="signaturePosition">
+              <option value="bottom-right">Bottom right</option>
+              <option value="bottom-left">Bottom left</option>
+              <option value="center">Center</option>
+              <option value="top-right">Top right</option>
+              <option value="top-left">Top left</option>
+              <option value="custom">Custom exact position</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="signatureWidth">Signature width</label>
+            <input id="signatureWidth" type="number" min="80" max="260" step="10" value="160">
+          </div>
+          <div class="settings-row">
+            <label for="signatureColor">Ink color</label>
+            <select id="signatureColor">
+              <option value="black">Black</option>
+              <option value="blue">Blue</option>
+              <option value="red">Red</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="signatureStrokeWidth">Pen thickness</label>
+            <input id="signatureStrokeWidth" type="number" min="2" max="10" step="1" value="4">
+          </div>
+          <div class="settings-row signature-custom-row" hidden>
+            <label for="signatureX">Horizontal position (%)</label>
+            <input id="signatureX" type="number" min="0" max="100" step="1" value="70">
+          </div>
+          <div class="settings-row signature-custom-row" hidden>
+            <label for="signatureY">Vertical position (%)</label>
+            <input id="signatureY" type="number" min="0" max="100" step="1" value="12">
+          </div>
+        </div>
+
+        <div class="signature-panel" id="signaturePanel">
+          <label class="signature-text-field" for="signatureText">Typed signature</label>
+          <input id="signatureText" type="text" maxlength="80" placeholder="Type your name">
+          <div class="signature-pad-wrap">
+            <canvas id="signatureCanvas" width="520" height="180" aria-label="Draw signature area"></canvas>
+          </div>
+          <button class="secondary-button compact-button" id="signaturePadClear" type="button">Clear signature</button>
+        </div>
+
+        <div class="inline-actions">
+          <button class="secondary-button" id="signatureClear" type="button">Clear file</button>
+          <button class="secondary-button" id="signatureFullButton" type="button">Full-view signer</button>
+        </div>
+        <div class="mini-steps" aria-label="How to use Sign PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Draw, type, or place a signature</li>
+            <li>Sign and download</li>
+          </ol>
+        </div>
+        <button class="primary-button green-button" id="signatureButton" type="button">Sign PDF</button>
+        <div class="result-area" id="signatureResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="metadata-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">07</p>
+            <h2>Edit PDF Metadata</h2>
+          </div>
+          <span class="chip chip-blue">Title and author</span>
+        </div>
+        <label class="drop-zone" for="metadataFile">
+          <span class="drop-title">Select one PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here, then update its title, author, subject, and keywords.</span>
+          <input id="metadataFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="metadataList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="metadataSummary" aria-live="polite" aria-atomic="true">No PDF selected for metadata editing.</div>
+
+        <div class="settings-panel" aria-label="PDF metadata settings">
+          <div class="settings-row">
+            <label for="metadataTitle">Title</label>
+            <input id="metadataTitle" type="text" maxlength="120" placeholder="Document title">
+          </div>
+          <div class="settings-row">
+            <label for="metadataAuthor">Author</label>
+            <input id="metadataAuthor" type="text" maxlength="120" placeholder="Author name">
+          </div>
+          <div class="settings-row">
+            <label for="metadataSubject">Subject</label>
+            <input id="metadataSubject" type="text" maxlength="160" placeholder="Document subject">
+          </div>
+          <div class="settings-row">
+            <label for="metadataKeywords">Keywords</label>
+            <input id="metadataKeywords" type="text" maxlength="220" placeholder="invoice, report, draft">
+          </div>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Edit PDF Metadata">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Enter title, author, subject, or keywords</li>
+            <li>Update metadata and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="metadataClear" type="button">Clear file</button>
+        <button class="primary-button blue-button" id="metadataButton" type="button">Update Metadata</button>
+        <div class="result-area" id="metadataResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="annotate-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">14</p>
+            <h2>Annotate PDF</h2>
+          </div>
+          <div class="tool-tags" aria-label="Annotate PDF highlights">
+            <span class="tool-tag tool-tag-new">New</span>
+            <span class="chip chip-green">Notes and marks</span>
+          </div>
+        </div>
+        <label class="drop-zone" for="annotateFile">
+          <span class="drop-title">Select one PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here, then add a text note, highlight, rectangle, or freehand mark.</span>
+          <input id="annotateFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="annotateList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="annotateSummary" aria-live="polite" aria-atomic="true">No PDF selected for annotation.</div>
+
+        <div class="settings-panel" aria-label="Annotate PDF settings">
+          <div class="settings-row">
+            <label for="annotateType">Annotation type</label>
+            <select id="annotateType">
+              <option value="text">Text note</option>
+              <option value="highlight">Highlight box</option>
+              <option value="rectangle">Rectangle outline</option>
+              <option value="draw">Freehand drawing</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="annotatePage">Page number</label>
+            <input id="annotatePage" type="number" min="1" step="1" value="1">
+          </div>
+          <div class="settings-row">
+            <label for="annotateText">Text note</label>
+            <input id="annotateText" type="text" maxlength="140" placeholder="Add a note">
+          </div>
+          <div class="settings-row">
+            <label for="annotateColor">Color</label>
+            <input id="annotateColor" type="color" value="#f59e0b">
+          </div>
+          <div class="settings-row">
+            <label for="annotateOpacity">Opacity (%)</label>
+            <input id="annotateOpacity" type="number" min="10" max="100" step="5" value="35">
+          </div>
+          <div class="settings-row">
+            <label for="annotateFontSize">Text size</label>
+            <input id="annotateFontSize" type="number" min="8" max="48" step="1" value="14">
+          </div>
+          <div class="settings-row">
+            <label for="annotateX">Horizontal position (%)</label>
+            <input id="annotateX" type="number" min="0" max="100" step="1" value="12">
+          </div>
+          <div class="settings-row">
+            <label for="annotateY">Vertical position (%)</label>
+            <input id="annotateY" type="number" min="0" max="100" step="1" value="72">
+          </div>
+          <div class="settings-row">
+            <label for="annotateWidth">Width (%)</label>
+            <input id="annotateWidth" type="number" min="5" max="100" step="1" value="38">
+          </div>
+          <div class="settings-row">
+            <label for="annotateHeight">Height (%)</label>
+            <input id="annotateHeight" type="number" min="3" max="80" step="1" value="10">
+          </div>
+        </div>
+
+        <div class="annotation-draw-panel" id="annotationDrawPanel">
+          <div class="list-label">Freehand drawing</div>
+          <div class="signature-pad-wrap">
+            <canvas id="annotationCanvas" width="520" height="180" aria-label="Draw annotation area"></canvas>
+          </div>
+          <button class="secondary-button compact-button" id="annotationPadClear" type="button">Clear drawing</button>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Annotate PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Choose a note, highlight, shape, or drawing</li>
+            <li>Add annotation and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="annotateClear" type="button">Clear file</button>
+        <button class="primary-button green-button" id="annotateButton" type="button">Annotate PDF</button>
+        <div class="result-area" id="annotateResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="flatten-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">15</p>
+            <h2>Flatten PDF</h2>
+          </div>
+          <div class="tool-tags" aria-label="Flatten PDF highlights">
+            <span class="tool-tag tool-tag-new">New</span>
+            <span class="chip chip-warm">Lock visible page</span>
+          </div>
+        </div>
+        <label class="drop-zone" for="flattenFile">
+          <span class="drop-title">Select one PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here to create a flattened copy of the visible pages.</span>
+          <input id="flattenFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="flattenList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="flattenSummary" aria-live="polite" aria-atomic="true">No PDF selected for flattening.</div>
+
+        <div class="settings-panel" aria-label="Flatten PDF settings">
+          <div class="settings-row">
+            <label for="flattenScale">Render quality</label>
+            <select id="flattenScale">
+              <option value="1">Standard</option>
+              <option value="1.5" selected>Better</option>
+              <option value="2">High</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Flatten PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Choose render quality</li>
+            <li>Flatten and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="flattenClear" type="button">Clear file</button>
+        <button class="primary-button accent-button" id="flattenButton" type="button">Flatten PDF</button>
+        <div class="result-area" id="flattenResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="crop-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">17</p>
+            <h2>Crop PDF</h2>
+          </div>
+          <div class="tool-tags" aria-label="Crop PDF highlights">
+            <span class="tool-tag tool-tag-new">New</span>
+            <span class="chip chip-warm">Trim margins</span>
+          </div>
+        </div>
+        <label class="drop-zone" for="cropFile">
+          <span class="drop-title">Select one PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here, then crop page margins by percentage.</span>
+          <input id="cropFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="cropList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="cropSummary" aria-live="polite" aria-atomic="true">No PDF selected for cropping.</div>
+
+        <div class="settings-panel" aria-label="Crop PDF settings">
+          <label class="radio-row">
+            <input type="radio" name="cropPages" value="all" checked>
+            <span>Crop all pages</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="cropPages" value="range">
+            <span>Crop page range</span>
+          </label>
+          <label class="page-input-label" for="cropPageSelection">Page range</label>
+          <input id="cropPageSelection" class="page-input" type="text" placeholder="1, 3-5, 8" disabled>
+          <div class="settings-row">
+            <label for="cropTop">Top margin (%)</label>
+            <input id="cropTop" type="number" min="0" max="45" step="1" value="5">
+          </div>
+          <div class="settings-row">
+            <label for="cropRight">Right margin (%)</label>
+            <input id="cropRight" type="number" min="0" max="45" step="1" value="5">
+          </div>
+          <div class="settings-row">
+            <label for="cropBottom">Bottom margin (%)</label>
+            <input id="cropBottom" type="number" min="0" max="45" step="1" value="5">
+          </div>
+          <div class="settings-row">
+            <label for="cropLeft">Left margin (%)</label>
+            <input id="cropLeft" type="number" min="0" max="45" step="1" value="5">
+          </div>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Crop PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Choose pages and crop margins</li>
+            <li>Crop and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="cropClear" type="button">Clear file</button>
+        <button class="primary-button accent-button" id="cropButton" type="button">Crop PDF</button>
+        <div class="result-area" id="cropResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="add-text-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">18</p>
+            <h2>Add Text / Fill PDF</h2>
+          </div>
+          <div class="tool-tags" aria-label="Add text PDF highlights">
+            <span class="tool-tag tool-tag-new">New</span>
+            <span class="chip chip-green">Fill fields</span>
+          </div>
+        </div>
+        <label class="drop-zone" for="addTextFile">
+          <span class="drop-title">Select one PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here, then place typed text onto the page.</span>
+          <input id="addTextFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="addTextList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="addTextSummary" aria-live="polite" aria-atomic="true">No PDF selected for text filling.</div>
+
+        <div class="settings-panel" aria-label="Add text to PDF settings">
+          <div class="settings-row settings-row-full">
+            <label for="addTextValue">Text to add</label>
+            <textarea id="addTextValue" rows="3" maxlength="500" placeholder="Type text for the PDF"></textarea>
+          </div>
+          <div class="settings-row">
+            <label for="addTextPage">Page number</label>
+            <input id="addTextPage" type="number" min="1" step="1" value="1">
+          </div>
+          <div class="settings-row">
+            <label for="addTextFontSize">Font size</label>
+            <input id="addTextFontSize" type="number" min="6" max="48" step="1" value="12">
+          </div>
+          <div class="settings-row">
+            <label for="addTextColor">Color</label>
+            <input id="addTextColor" type="color" value="#111827">
+          </div>
+          <div class="settings-row">
+            <label for="addTextX">Horizontal position (%)</label>
+            <input id="addTextX" type="number" min="0" max="100" step="1" value="12">
+          </div>
+          <div class="settings-row">
+            <label for="addTextY">Vertical position (%)</label>
+            <input id="addTextY" type="number" min="0" max="100" step="1" value="70">
+          </div>
+          <div class="settings-row">
+            <label for="addTextWidth">Text box width (%)</label>
+            <input id="addTextWidth" type="number" min="10" max="100" step="1" value="45">
+          </div>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Add Text to PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Type text and choose position</li>
+            <li>Add text and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="addTextClear" type="button">Clear file</button>
+        <button class="primary-button green-button" id="addTextButton" type="button">Add Text</button>
+        <div class="result-area" id="addTextResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="remove-password-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">19</p>
+            <h2>Remove PDF Password</h2>
+          </div>
+          <div class="tool-tags" aria-label="Remove PDF password highlights">
+            <span class="tool-tag tool-tag-new">New</span>
+            <span class="chip chip-blue">Known password</span>
+          </div>
+        </div>
+        <label class="drop-zone" for="removePasswordFile">
+          <span class="drop-title">Select a protected PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here. Enter the password when asked to create an unlocked visible-page copy. Selectable text may not be preserved.</span>
+          <input id="removePasswordFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="removePasswordList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="removePasswordSummary" aria-live="polite" aria-atomic="true">No PDF selected for password removal.</div>
+
+        <div class="settings-panel" aria-label="Remove PDF password settings">
+          <div class="settings-row">
+            <label for="removePasswordScale">Output quality</label>
+            <select id="removePasswordScale">
+              <option value="1">Standard</option>
+              <option value="1.5" selected>Better</option>
+              <option value="2">High</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Remove PDF Password">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select a PDF you can unlock</li>
+            <li>Enter the password when prompted</li>
+            <li>Download an unlocked copy</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="removePasswordClear" type="button">Clear file</button>
+        <button class="primary-button blue-button" id="removePasswordButton" type="button">Remove Password</button>
+        <div class="result-area" id="removePasswordResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-section-label tool-section-convert" data-tool-category="to-pdf">Convert to PDF</div>
+      <div class="tool-card" id="image-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">08</p>
+            <h2>Image to PDF</h2>
+          </div>
+          <span class="chip chip-green">JPEG and PNG</span>
+        </div>
+
+        <label class="drop-zone" for="imageFiles">
+          <span class="drop-title">Select images</span>
+          <span class="drop-copy">Tap to browse or drop JPEG and PNG images here to create one PDF document.</span>
+          <input id="imageFiles" type="file" accept="image/jpeg,image/png,.jpg,.jpeg,.png" multiple>
+        </label>
+
+        <div class="file-list-wrap">
+          <div class="list-label">Image order</div>
+          <ul class="file-list empty" id="imageList">
+            <li>No image files selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="imageSummary" aria-live="polite" aria-atomic="true">No images ready to convert.</div>
+
+        <div class="settings-panel" aria-label="Image PDF settings">
+          <div class="settings-row">
+            <label for="imagePageSize">Page size</label>
+            <select id="imagePageSize">
+              <option value="auto">Auto</option>
+              <option value="a4">A4</option>
+              <option value="letter">Letter</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="imageOrientation">Orientation</label>
+            <select id="imageOrientation">
+              <option value="auto">Auto</option>
+              <option value="portrait">Portrait</option>
+              <option value="landscape">Landscape</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="imageMargin">Margins</label>
+            <input id="imageMargin" type="number" min="0" max="144" step="6" value="24">
+          </div>
+          <div class="settings-row">
+            <label for="imageFitMode">Image scale</label>
+            <select id="imageFitMode">
+              <option value="fit">Fit</option>
+              <option value="fill">Fill</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Image to PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select images</li>
+            <li>Reorder files</li>
+            <li>Choose page size and margins</li>
+            <li>Convert and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="imageClear" type="button">Clear files</button>
+        <button class="primary-button green-button" id="imageButton" type="button">Convert Images</button>
+        <div class="result-area" id="imageResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="spreadsheet-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">09</p>
+            <h2>Spreadsheet to PDF</h2>
+          </div>
+          <span class="chip">XLSX and CSV</span>
+        </div>
+        <label class="drop-zone" for="spreadsheetFiles">
+          <span class="drop-title">Select spreadsheets</span>
+          <span class="drop-copy">Tap to browse or drop XLSX and CSV files here to create a clean table PDF.</span>
+          <input id="spreadsheetFiles" type="file" accept=".xlsx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv" multiple>
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Spreadsheet order</div>
+          <ul class="file-list empty" id="spreadsheetList">
+            <li>No spreadsheet files selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="spreadsheetSummary" aria-live="polite" aria-atomic="true">No spreadsheets ready to convert.</div>
+
+        <div class="settings-panel" aria-label="Spreadsheet PDF settings">
+          <div class="settings-row">
+            <label for="spreadsheetPageSize">Page size</label>
+            <select id="spreadsheetPageSize">
+              <option value="a4">A4</option>
+              <option value="letter">Letter</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="spreadsheetOrientation">Orientation</label>
+            <select id="spreadsheetOrientation">
+              <option value="landscape">Landscape</option>
+              <option value="portrait">Portrait</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="spreadsheetMargin">Margins</label>
+            <input id="spreadsheetMargin" type="number" min="12" max="72" step="6" value="30">
+          </div>
+          <label class="setting-check">
+            <input id="spreadsheetFitWidth" type="checkbox" checked>
+            <span>Fit columns to page</span>
+          </label>
+          <label class="setting-check">
+            <input id="spreadsheetGridlines" type="checkbox" checked>
+            <span>Show gridlines</span>
+          </label>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Spreadsheet to PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select XLSX or CSV files</li>
+            <li>Choose page and table settings</li>
+            <li>Convert and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="spreadsheetClear" type="button">Clear files</button>
+        <button class="primary-button" id="spreadsheetButton" type="button">Convert Spreadsheet</button>
+        <div class="result-area" id="spreadsheetResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="word-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">10</p>
+            <h2>Word to PDF</h2>
+          </div>
+          <span class="chip chip-warm">DOCX basic</span>
+        </div>
+        <label class="drop-zone" for="wordFiles">
+          <span class="drop-title">Select Word files</span>
+          <span class="drop-copy">Tap to browse or drop DOCX files here. Best for text, headings, lists, and basic tables.</span>
+          <input id="wordFiles" type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple>
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Word file order</div>
+          <ul class="file-list empty" id="wordList">
+            <li>No Word files selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="wordSummary" aria-live="polite" aria-atomic="true">No Word files ready to convert.</div>
+
+        <div class="settings-panel" aria-label="Word PDF settings">
+          <div class="settings-row">
+            <label for="wordPageSize">Page size</label>
+            <select id="wordPageSize">
+              <option value="a4">A4</option>
+              <option value="letter">Letter</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="wordOrientation">Orientation</label>
+            <select id="wordOrientation">
+              <option value="portrait">Portrait</option>
+              <option value="landscape">Landscape</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="wordMargin">Margins</label>
+            <input id="wordMargin" type="number" min="12" max="96" step="6" value="42">
+          </div>
+          <div class="settings-row">
+            <label for="wordFontSize">Font size</label>
+            <input id="wordFontSize" type="number" min="8" max="18" step="1" value="11">
+          </div>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Word to PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select DOCX files</li>
+            <li>Choose page settings</li>
+            <li>Convert and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="wordClear" type="button">Clear files</button>
+        <button class="primary-button accent-button" id="wordButton" type="button">Convert Word</button>
+        <div class="result-area" id="wordResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="text-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">11</p>
+            <h2>TXT to PDF</h2>
+          </div>
+          <span class="chip chip-green">Plain text</span>
+        </div>
+        <label class="drop-zone" for="textFiles">
+          <span class="drop-title">Select text files</span>
+          <span class="drop-copy">Tap to browse or drop TXT files here to create readable PDF pages.</span>
+          <input id="textFiles" type="file" accept=".txt,text/plain" multiple>
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Text file order</div>
+          <ul class="file-list empty" id="textList">
+            <li>No text files selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="textSummary" aria-live="polite" aria-atomic="true">No text files ready to convert.</div>
+
+        <div class="settings-panel" aria-label="Text PDF settings">
+          <div class="settings-row">
+            <label for="textPageSize">Page size</label>
+            <select id="textPageSize">
+              <option value="a4">A4</option>
+              <option value="letter">Letter</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="textOrientation">Orientation</label>
+            <select id="textOrientation">
+              <option value="portrait">Portrait</option>
+              <option value="landscape">Landscape</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="textMargin">Margins</label>
+            <input id="textMargin" type="number" min="12" max="96" step="6" value="42">
+          </div>
+          <div class="settings-row">
+            <label for="textFontSize">Font size</label>
+            <input id="textFontSize" type="number" min="8" max="18" step="1" value="11">
+          </div>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use TXT to PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select TXT files</li>
+            <li>Choose page and font settings</li>
+            <li>Convert and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="textClear" type="button">Clear files</button>
+        <button class="primary-button green-button" id="textButton" type="button">Convert Text</button>
+        <div class="result-area" id="textResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-section-label tool-section-export" data-tool-category="from-pdf">Convert from PDF</div>
+      <div class="tool-card" id="pdf-image-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">12</p>
+            <h2>PDF to PNG/JPG</h2>
+          </div>
+          <div class="tool-tags" aria-label="PDF to image highlights">
+            <span class="tool-tag tool-tag-popular">Popular</span>
+            <span class="chip chip-blue">Image export</span>
+          </div>
+        </div>
+        <label class="drop-zone" for="pdfImageFile">
+          <span class="drop-title">Select a PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here to export pages as PNG or JPG images.</span>
+          <input id="pdfImageFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="pdfImageList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="pdfImageSummary" aria-live="polite" aria-atomic="true">No PDF selected for image export.</div>
+
+        <div class="settings-panel" aria-label="PDF image export settings">
+          <div class="settings-row">
+            <label for="pdfImageFormat">Image type</label>
+            <select id="pdfImageFormat">
+              <option value="png">PNG</option>
+              <option value="jpg">JPG</option>
+            </select>
+          </div>
+          <div class="settings-row">
+            <label for="pdfImageScale">Scale</label>
+            <select id="pdfImageScale">
+              <option value="1">1x</option>
+              <option value="1.5" selected>1.5x</option>
+              <option value="2">2x</option>
+            </select>
+          </div>
+          <label class="radio-row">
+            <input type="radio" name="pdfImagePages" value="all" checked>
+            <span>Export all pages</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="pdfImagePages" value="first">
+            <span>Export first page</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="pdfImagePages" value="range">
+            <span>Export page range</span>
+          </label>
+          <label class="page-input-label" for="pdfImagePageSelection">Page range</label>
+          <input id="pdfImagePageSelection" class="page-input" type="text" placeholder="1, 3-5, 8" disabled>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use PDF to PNG or JPG">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Choose image type and pages</li>
+            <li>Export and download</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="pdfImageClear" type="button">Clear file</button>
+        <button class="primary-button blue-button" id="pdfImageButton" type="button">Export Images</button>
+        <div class="result-area" id="pdfImageResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="pdf-extract-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">13</p>
+            <h2>Extract Images from PDF</h2>
+          </div>
+          <div class="tool-tags" aria-label="Extract images highlights">
+            <span class="tool-tag tool-tag-new">New</span>
+            <span class="chip chip-blue">Embedded images</span>
+          </div>
+        </div>
+        <label class="drop-zone" for="pdfExtractFile">
+          <span class="drop-title">Select a PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here to pull out embedded photos, logos, and raster images.</span>
+          <input id="pdfExtractFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="pdfExtractList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="pdfExtractSummary" aria-live="polite" aria-atomic="true">No PDF selected for image extraction.</div>
+
+        <div class="settings-panel" aria-label="Extract images from PDF settings">
+          <label class="radio-row">
+            <input type="radio" name="pdfExtractPages" value="all" checked>
+            <span>Scan all pages</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="pdfExtractPages" value="first">
+            <span>Scan first page</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="pdfExtractPages" value="range">
+            <span>Scan page range</span>
+          </label>
+          <label class="page-input-label" for="pdfExtractPageSelection">Page range</label>
+          <input id="pdfExtractPageSelection" class="page-input" type="text" placeholder="1, 3-5, 8" disabled>
+          <div class="settings-row">
+            <label for="pdfExtractMinWidth">Minimum image width</label>
+            <input id="pdfExtractMinWidth" type="number" min="1" max="3000" step="10" value="80">
+          </div>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use Extract Images from PDF">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Choose pages and minimum image size</li>
+            <li>Extract and download images</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="pdfExtractClear" type="button">Clear file</button>
+        <button class="primary-button blue-button" id="pdfExtractButton" type="button">Extract Images</button>
+        <div class="result-area" id="pdfExtractResult" aria-live="polite"></div>
+      </div>
+
+      <div class="tool-card" id="pdf-text-card">
+        <div class="card-heading">
+          <div>
+            <p class="tool-number">16</p>
+            <h2>PDF to TXT</h2>
+          </div>
+          <div class="tool-tags" aria-label="PDF to TXT highlights">
+            <span class="tool-tag tool-tag-new">New</span>
+            <span class="chip chip-blue">Extract text</span>
+          </div>
+        </div>
+        <label class="drop-zone" for="pdfTextFile">
+          <span class="drop-title">Select a PDF</span>
+          <span class="drop-copy">Tap to browse or drop one PDF here to extract readable text into a TXT file.</span>
+          <input id="pdfTextFile" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div class="file-list-wrap">
+          <div class="list-label">Selected PDF</div>
+          <ul class="file-list empty" id="pdfTextList">
+            <li>No PDF file selected.</li>
+          </ul>
+        </div>
+        <div class="summary-line" id="pdfTextSummary" aria-live="polite" aria-atomic="true">No PDF selected for text extraction.</div>
+
+        <div class="settings-panel" aria-label="PDF text extraction settings">
+          <label class="radio-row">
+            <input type="radio" name="pdfTextPages" value="all" checked>
+            <span>Extract all pages</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="pdfTextPages" value="first">
+            <span>Extract first page</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="pdfTextPages" value="range">
+            <span>Extract page range</span>
+          </label>
+          <label class="page-input-label" for="pdfTextPageSelection">Page range</label>
+          <input id="pdfTextPageSelection" class="page-input" type="text" placeholder="1, 3-5, 8" disabled>
+          <label class="setting-check">
+            <input id="pdfTextPageBreaks" type="checkbox" checked>
+            <span>Include page breaks</span>
+          </label>
+        </div>
+
+        <div class="mini-steps" aria-label="How to use PDF to TXT">
+          <span class="mini-steps-title">How to use</span>
+          <ol>
+            <li>Select one PDF</li>
+            <li>Choose pages to extract</li>
+            <li>Download the TXT file</li>
+          </ol>
+        </div>
+        <button class="secondary-button" id="pdfTextClear" type="button">Clear file</button>
+        <button class="primary-button blue-button" id="pdfTextButton" type="button">Extract Text</button>
+        <div class="result-area" id="pdfTextResult" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot-bottom" aria-label="Advertisement placeholder">
+      <span>Advertisement - 728 x 90 reserved space</span>
+    </div>
+  </main>
+
+  <div class="pdf-password-modal" id="pdfPasswordDialog" role="dialog" aria-modal="true" aria-labelledby="pdfPasswordTitle" hidden>
+    <form class="pdf-password-card" id="pdfPasswordForm">
+      <div class="pdf-password-header">
+        <div>
+          <p class="tool-number">Protected PDF</p>
+          <h2 id="pdfPasswordTitle">Enter PDF password</h2>
+        </div>
+      </div>
+      <p class="pdf-password-message" id="pdfPasswordMessage">This PDF needs a password to preview or export.</p>
+      <label class="signature-text-field" for="pdfPasswordInput">Password</label>
+      <input id="pdfPasswordInput" type="password" autocomplete="current-password">
+      <div class="message error" id="pdfPasswordError" role="alert" aria-live="assertive" hidden></div>
+      <div class="pdf-password-actions">
+        <button class="secondary-button" id="pdfPasswordCancel" type="button">Cancel</button>
+        <button class="primary-button" id="pdfPasswordSubmit" type="submit">Unlock</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="signature-full-modal" id="signatureFullModal" role="dialog" aria-modal="true" aria-labelledby="signatureFullTitle" hidden>
+    <div class="signature-full-shell">
+      <div class="signature-full-header">
+        <div>
+          <p class="tool-number">Sign PDF</p>
+          <h2 id="signatureFullTitle">Full-view signer</h2>
+        </div>
+        <button class="icon-button signature-full-close" id="signatureFullClose" type="button" aria-label="Close full-view signer">×</button>
+      </div>
+
+      <div class="signature-full-toolbar">
+        <div class="signature-full-mode" aria-label="Full-view signing mode">
+          <button class="signature-full-mode-button is-active" id="signatureFullToolDraw" type="button" aria-pressed="true">Draw on page</button>
+          <button class="signature-full-mode-button" id="signatureFullToolPlace" type="button" aria-pressed="false">Place signature</button>
+        </div>
+        <button class="preview-tool-button" id="signatureFullPrev" type="button">Previous</button>
+        <div class="signature-full-status" id="signatureFullStatus" aria-live="polite">Page preview</div>
+        <button class="preview-tool-button" id="signatureFullNext" type="button">Next</button>
+        <button class="preview-tool-button" id="signatureFullClear" type="button">Clear drawing</button>
+      </div>
+
+      <div class="signature-full-stage-wrap" id="signatureFullStageWrap">
+        <div class="signature-full-stage" id="signatureFullStage">
+          <canvas id="signatureFullCanvas" aria-label="PDF page preview"></canvas>
+          <canvas id="signatureFullDrawCanvas" aria-label="Draw signature on PDF page"></canvas>
+          <button class="signature-placement-preview" id="signaturePlacementPreview" type="button" aria-label="Signature placement preview" hidden>
+            <span id="signaturePlacementLabel">Signature</span>
+          </button>
+        </div>
+      </div>
+
+      <button class="primary-button green-button" id="signatureFullSign" type="button">Sign PDF</button>
+    </div>
+  </div>
+
+  <section class="content-section compact-seo-section" aria-label="PDFNest details">
+    <article>
+      <p class="eyebrow">Private PDF tools</p>
+      <h2>Work with documents in your browser</h2>
+      <p>PDFNest handles common PDF tasks like merge, split, sign, watermark, page numbers, image conversion, text extraction, and known-password PDF unlocking without an upload server.</p>
+    </article>
+    <article>
+      <h2>Privacy</h2>
+      <p>Files are processed locally in your browser. Generated download links are temporary and are cleared when the page is refreshed or closed.</p>
+      <p><a class="text-link" href="privacy.html">Read the Privacy Policy</a></p>
+    </article>
+    <article>
+      <h2>How Privacy Works</h2>
+      <p>Browser JavaScript reads the selected files on your device, runs the chosen tool, and creates a local download link for the result.</p>
+    </article>
+    <article>
+      <h2>Popular Tools</h2>
+      <ul class="link-list">
+        <li><a href="merge-pdf/">Merge PDF</a></li>
+        <li><a href="sign-pdf/">Sign PDF</a></li>
+        <li><a href="edit-pdf-metadata/">Edit PDF Metadata</a></li>
+        <li><a href="watermark-pdf/">Watermark PDF</a></li>
+        <li><a href="page-numbers-pdf/">Add Page Numbers to PDF</a></li>
+        <li><a href="annotate-pdf/">Annotate PDF</a></li>
+        <li><a href="flatten-pdf/">Flatten PDF</a></li>
+        <li><a href="crop-pdf/">Crop PDF</a></li>
+        <li><a href="add-text-to-pdf/">Add Text to PDF</a></li>
+        <li><a href="remove-pdf-password/">Remove PDF Password</a></li>
+        <li><a href="word-to-pdf/">Word to PDF</a></li>
+        <li><a href="pdf-to-jpg/">PDF to JPG or PNG</a></li>
+        <li><a href="extract-images-from-pdf/">Extract Images from PDF</a></li>
+        <li><a href="extract-text-from-pdf/">PDF to TXT</a></li>
+      </ul>
+    </article>
+    <article>
+      <h2>FAQ</h2>
+      <details>
+        <summary>Can I use this without internet?</summary>
+        <p>Yes. The PDF and file-reading libraries are included locally in the project, so the tool can run offline after the files are on your device.</p>
+      </details>
+      <details>
+        <summary>Why should I check the file order?</summary>
+        <p>Merge and image conversion keep the selected order. Use the drag handles or arrow buttons to adjust the list before creating a PDF.</p>
+      </details>
+      <details>
+        <summary>What page range format works?</summary>
+        <p>Use individual pages, ranges, or both, such as 1, 3-5, 8. Pages are extracted in the order entered.</p>
+      </details>
+      <details>
+        <summary>Can it open password-protected PDFs?</summary>
+        <p>PDFNest can ask for a password for page previews, PDF-to-image export, image extraction, text extraction, and password removal. Most direct editing tools still need an unlocked PDF.</p>
+      </details>
+      <details>
+        <summary>Can I remove a PDF password?</summary>
+        <p>Yes, if you already know the password. The Remove PDF Password tool opens the protected file locally and creates a new unencrypted visible-page copy. Because it rebuilds pages visually, the output may not keep selectable text.</p>
+      </details>
+      <details>
+        <summary>Can it convert Word, PowerPoint, OCR, or PDF back to Office files?</summary>
+        <p>Advanced PowerPoint, OCR, and PDF-to-Office conversions need larger document engines or OCR models to be reliable. This browser-only version focuses on tools that can run locally without uploading files.</p>
+      </details>
+    </article>
+  </section>
+
+  <footer class="app-footer">
+    <p>All processing runs locally in your browser. Refreshing the page clears selected files and generated links.</p>
+    <p class="footer-links">
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="sitemap.xml">Sitemap</a>
+    </p>
+  </footer>
+
+  <script src="vendor/pdf.min.js"></script>
+  <script src="vendor/pdf-lib.min.js"></script>
+  <script src="vendor/jszip.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

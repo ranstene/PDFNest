@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact PDFNest for questions, feedback, privacy requests, and publishing inquiries.">
+  <meta name="theme-color" content="#0f766e">
+  <title>Contact | PDFNest</title>
+  <link rel="canonical" href="/contact.html">
+  <meta property="og:title" content="Contact | PDFNest">
+  <meta property="og:description" content="Contact PDFNest for questions, feedback, privacy requests, and publishing inquiries.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/contact.html">
+  <meta property="og:site_name" content="PDFNest">
+  <meta property="og:image" content="/icons/icon.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact | PDFNest">
+  <meta name="twitter:description" content="Contact PDFNest for questions, feedback, privacy requests, and publishing inquiries.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-content">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1>Contact</h1>
+        <p class="intro">Questions, feedback, privacy requests, and publishing inquiries can be sent to the site owner.</p>
+      </div>
+      <div class="header-actions">
+        <a class="tools-nav-button" href="index.html">Back to tools</a>
+        <a class="tools-nav-button" href="about.html">About</a>
+        <div class="privacy-note">
+          <span class="status-dot"></span>
+          No upload server
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <article class="legal-card">
+      <section>
+        <h2>Send a Message</h2>
+        <p>Use this form to open a prefilled email. No message is saved on this website.</p>
+        <form class="contact-form" id="contactForm" action="mailto:tamdevs.support@gmail.com" method="post" enctype="text/plain" novalidate>
+          <div class="contact-grid">
+            <label class="contact-field" for="contactName">
+              <span>Name</span>
+              <input id="contactName" name="name" type="text" autocomplete="name" required aria-describedby="contactNameError" aria-invalid="false">
+              <span class="field-error" id="contactNameError" aria-live="polite"></span>
+            </label>
+            <label class="contact-field" for="contactEmail">
+              <span>Email</span>
+              <input id="contactEmail" name="email" type="email" autocomplete="email" required aria-describedby="contactEmailError" aria-invalid="false">
+              <span class="field-error" id="contactEmailError" aria-live="polite"></span>
+            </label>
+            <label class="contact-field contact-field-full" for="contactSubject">
+              <span>Subject</span>
+              <input id="contactSubject" name="subject" type="text" maxlength="120" placeholder="Feedback, support, privacy request" required aria-describedby="contactSubjectError" aria-invalid="false">
+              <span class="field-error" id="contactSubjectError" aria-live="polite"></span>
+            </label>
+            <label class="contact-field contact-field-full" for="contactMessage">
+              <span>Description</span>
+              <textarea id="contactMessage" name="message" rows="7" maxlength="2000" placeholder="Write your question or feedback here." required aria-describedby="contactMessageError" aria-invalid="false"></textarea>
+              <span class="field-error" id="contactMessageError" aria-live="polite"></span>
+            </label>
+          </div>
+          <p class="contact-note">Please do not attach or paste private document contents. PDFNest is designed so files stay on your device.</p>
+          <button class="primary-button contact-submit" type="submit">Open email app</button>
+          <p class="message info contact-form-status" id="contactFormStatus" role="status" aria-live="polite" hidden></p>
+        </form>
+      </section>
+
+      <section>
+        <h2>Email</h2>
+        <p>Use this placeholder before publishing, then replace it with your real contact email:</p>
+        <p><a class="text-link" href="mailto:tamdevs.support@gmail.com">tamdevs.support@gmail.com</a></p>
+      </section>
+
+      <section>
+        <h2>Support Notes</h2>
+        <p>Please do not send private documents by email. The tool is designed so document processing happens locally in your browser.</p>
+      </section>
+
+      <section>
+        <h2>Advertising and Policy Requests</h2>
+        <p>For advertising, privacy, or policy questions, use the contact email above after replacing it with your real site email.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="app-footer">
+    <p class="footer-links">
+      <a href="index.html">Tools</a> ·
+      <a href="privacy.html">Privacy Policy</a> ·
+      <a href="about.html">About</a>
+    </p>
+  </footer>
+  <script>
+    (function () {
+      const form = document.getElementById("contactForm");
+      const status = document.getElementById("contactFormStatus");
+      const contactEmail = "tamdevs.support@gmail.com";
+      const fields = [
+        {
+          id: "contactName",
+          message: "Enter your name."
+        },
+        {
+          id: "contactEmail",
+          message: "Enter a valid email address.",
+          validate: function (value) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+          }
+        },
+        {
+          id: "contactSubject",
+          message: "Enter a subject."
+        },
+        {
+          id: "contactMessage",
+          message: "Enter a short description."
+        }
+      ];
+
+      if (!form) return;
+
+      function setFieldError(field, message) {
+        const input = document.getElementById(field.id);
+        const error = document.getElementById(field.id + "Error");
+
+        if (!input || !error) return;
+
+        input.setAttribute("aria-invalid", message ? "true" : "false");
+        error.textContent = message || "";
+      }
+
+      function validateContactForm() {
+        let firstInvalid = null;
+
+        fields.forEach(function (field) {
+          const input = document.getElementById(field.id);
+          const value = input ? input.value.trim() : "";
+          const isValid = value && (!field.validate || field.validate(value));
+          setFieldError(field, isValid ? "" : field.message);
+
+          if (!isValid && !firstInvalid) {
+            firstInvalid = input;
+          }
+        });
+
+        if (firstInvalid) {
+          firstInvalid.focus();
+
+          if (status) {
+            status.className = "message error contact-form-status";
+            status.setAttribute("role", "alert");
+            status.setAttribute("aria-live", "assertive");
+            status.textContent = "Please fix the highlighted fields before sending.";
+            status.hidden = false;
+          }
+
+          return false;
+        }
+
+        return true;
+      }
+
+      fields.forEach(function (field) {
+        const input = document.getElementById(field.id);
+
+        if (!input) return;
+
+        input.addEventListener("input", function () {
+          setFieldError(field, "");
+
+          if (status && status.classList.contains("error")) {
+            status.hidden = true;
+          }
+        });
+      });
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!validateContactForm()) return;
+
+        const data = new FormData(form);
+        const name = String(data.get("name") || "").trim();
+        const email = String(data.get("email") || "").trim();
+        const subject = String(data.get("subject") || "PDFNest contact").trim();
+        const message = String(data.get("message") || "").trim();
+        const body = [
+          "Name: " + name,
+          "Email: " + email,
+          "",
+          "Message:",
+          message
+        ].join("\n");
+
+        window.location.href = "mailto:" + contactEmail
+          + "?subject=" + encodeURIComponent("[PDFNest] " + subject)
+          + "&body=" + encodeURIComponent(body);
+
+        if (status) {
+          status.className = "message info contact-form-status";
+          status.setAttribute("role", "status");
+          status.setAttribute("aria-live", "polite");
+          status.textContent = "Your email app should open with the message prefilled. If it does not, email tamdevs.support@gmail.com directly.";
+          status.hidden = false;
+        }
+      });
+    }());
+  </script>
+</body>
+</html>

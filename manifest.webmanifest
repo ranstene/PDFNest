@@ -1,0 +1,62 @@
+{
+  "name": "PDFNest",
+  "short_name": "PDFNest",
+  "description": "Private PDF and document tools that run locally in the browser.",
+  "id": "./",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "background_color": "#f4f8f5",
+  "theme_color": "#10a66f",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Merge PDF",
+      "short_name": "Merge",
+      "description": "Combine PDF files locally in your browser.",
+      "url": "./index.html#merge-card",
+      "icons": [
+        {
+          "src": "icons/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Image to PDF",
+      "short_name": "Images",
+      "description": "Convert PNG and JPG images into PDF.",
+      "url": "./index.html#image-card",
+      "icons": [
+        {
+          "src": "icons/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Sign PDF",
+      "short_name": "Sign",
+      "description": "Draw or place a signature on a PDF.",
+      "url": "./index.html#signature-card",
+      "icons": [
+        {
+          "src": "icons/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}
